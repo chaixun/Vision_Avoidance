@@ -45,11 +45,11 @@ int main()
 #ifdef PLATFORM_IS_LINUX
     kinect.Start();
 
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 3; ++i)
     {
 
         auto data = kinect.GetSensorData();
-        std::cout<<"data:"<<data.Get().depthMap[240*320]<<std::endl;
+/*        std::cout<<"data:"<<data.Get().depthMap[240*320]<<std::endl;
         std::cout<<"plane_Degree:"<<data.Get().pGridMap[7][15].planeDegree<<std::endl;
         std::cout<<"point_Num:"<<data.Get().pGridMap[7][15].pointNum<<std::endl;
         std::cout<<"norm_Vector:"<<data.Get().pGridMap[7][15].normalVector<<std::endl;
@@ -57,7 +57,7 @@ int main()
         std::cout<<"plane_Para "<<data.Get().pGridMap[7][15].planePara[0]
                 <<" "<<data.Get().pGridMap[7][15].planePara[1]
                 <<" "<<data.Get().pGridMap[7][15].planePara[2]
-                <<" "<<data.Get().pGridMap[7][15].planePara[3]<<endl;                                                                                                            Aris::Core::Sleep(1000);
+                <<" "<<data.Get().pGridMap[7][15].planePara[3]<<endl;  */                                                                                                          Aris::Core::Sleep(1000);
     }
 
     kinect.Stop();
