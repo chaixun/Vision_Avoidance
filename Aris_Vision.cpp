@@ -330,7 +330,7 @@ void KINECT_BASE::UpdateData(VISION_DATA &data)
 
     Matrix4f robotToWorld;
     robotToWorld << 1, 0, 0, 0,
-            0, 1, 0, 0,
+            0, 1, 0, 0.85,
             0, 0, 1, 0,
             0, 0, 0, 1;
 
