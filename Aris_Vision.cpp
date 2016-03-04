@@ -368,7 +368,8 @@ void KINECT_BASE::UpdateData(VISION_DATA &data)
     {
         for(int j = 0; j < 640; j++)
         {
-            if(data.pointCloud[i][j][0] != 0&&data.pointCloud[i][j][1] != 0&&data.pointCloud[i][j][2] != 0)
+//            if(data.pointCloud[i][j][0] != 0&&data.pointCloud[i][j][1] != 0&&data.pointCloud[i][j][2] != 0)
+            if(data.pointCloud[i][j][2] != 0)
             {
                 Point3D tempPoint = {0, 0, 0};
 
