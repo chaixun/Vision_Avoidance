@@ -225,36 +225,36 @@ void KINECT::UpdateData(VISION_DATA &data)
     string dataname4 ="../PointCloud/PlaneData_" + out4.str() + ".txt";
     ofs4.open(dataname4, ios::trunc);
 
-    for(int m = 0; m < 120; m++)
-    {
-        for(int n = 0; n < 120; n++)
-        {
-            pPointSet.clear();
+//    for(int m = 0; m < 120; m++)
+//    {
+//        for(int n = 0; n < 120; n++)
+//        {
+//            pPointSet.clear();
 
-            for(int p = 0; p < 480; p++)
-            {
-                for(int q = 0; q < 640; q++)
-                {
-                    if(data.pointCloud[p][q][0] != 0 && data.pointCloud[p][q][1] != 0&&data.pointCloud[p][q][2] != 0
-                            &&floor(data.pointCloud[p][q][0]/0.025) + 60 == n&&floor(data.pointCloud[p][q][2]/0.025) == m)
-                    {
-                        Point3D tempPoint;
-                        tempPoint.X = data.pointCloud[p][q][0];
-                        tempPoint.Y = data.pointCloud[p][q][1];
-                        tempPoint.Z = data.pointCloud[p][q][2];
+//            for(int p = 0; p < 480; p++)
+//            {
+//                for(int q = 0; q < 640; q++)
+//                {
+//                    if(data.pointCloud[p][q][0] != 0 && data.pointCloud[p][q][1] != 0&&data.pointCloud[p][q][2] != 0
+//                            &&floor(data.pointCloud[p][q][0]/0.025) + 60 == n&&floor(data.pointCloud[p][q][2]/0.025) == m)
+//                    {
+//                        Point3D tempPoint;
+//                        tempPoint.X = data.pointCloud[p][q][0];
+//                        tempPoint.Y = data.pointCloud[p][q][1];
+//                        tempPoint.Z = data.pointCloud[p][q][2];
 
-                        pPointSet.push_back(tempPoint);
-                    }
-                }
-            }
-            if(pPointSet.size() != 0)
-            {
-                CalPlane(pPointSet, data.pGridMap[m][n]);
-            }
-            ofs4<<data.pGridMap[m][n].planePara[0]<<" "<<data.pGridMap[m][n].planePara[1]<<" "<<data.pGridMap[m][n].planePara[2]<<" "<<data.pGridMap[m][n].planePara[3]<<" "
-                                                 <<data.pGridMap[m][n].pointNum<<" "<<data.pGridMap[m][n].planeDegree<<" "<<data.pGridMap[m][n].normalVector<<endl;
-        }
-    }
+//                        pPointSet.push_back(tempPoint);
+//                    }
+//                }
+//            }
+//            if(pPointSet.size() != 0)
+//            {
+//                CalPlane(pPointSet, data.pGridMap[m][n]);
+//            }
+//            ofs4<<data.pGridMap[m][n].planePara[0]<<" "<<data.pGridMap[m][n].planePara[1]<<" "<<data.pGridMap[m][n].planePara[2]<<" "<<data.pGridMap[m][n].planePara[3]<<" "
+//                                                 <<data.pGridMap[m][n].pointNum<<" "<<data.pGridMap[m][n].planeDegree<<" "<<data.pGridMap[m][n].normalVector<<endl;
+//        }
+//    }
 
     frameNum++;
 }
